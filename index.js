@@ -28,9 +28,10 @@ const { nextISSTimesForMyLocation } = require('./iss');
 
 const printPassTime = passTimes => {
   for (times of passTimes) {
-    console.log(times.risetime)
+    const timestamp = times.risetime * 1000;
+    const date = new Date(timestamp);
     const duration = times.duration
-    console.log(`Next pass at DATE, TIME, TIMEZONE for ${duration} seconds!`)
+    console.log(`Next pass at ${date},for ${duration} seconds!`)
   }
 
 }
