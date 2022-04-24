@@ -4,10 +4,12 @@ const request = require("request")
 const fetchMyIP = callback => {
   request('https://api.ipify.org?format=json', (error, response, body) => {
     if (error) {
-      console.log('error:', error);
+      return callback(error, null);
     }
     
-    console.log('body:', body)
+    const data = JSON.parse(body)
+    
+    return callback(null, data.ip)
   })
 };
 
