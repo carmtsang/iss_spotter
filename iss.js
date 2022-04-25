@@ -77,7 +77,7 @@ const nextISSTimesForMyLocation = callback => {
           return callback(err,null);
         }
 
-        callback(null, flyOver)
+        callback(null, flyOver);
       });
     });
   });
