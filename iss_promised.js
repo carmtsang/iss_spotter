@@ -20,14 +20,8 @@ const nextISSTimesForMyLocation = function() {
     .then((ip) => {
       return fetchCoordsByIP(ip);
     })
-    .catch((error) => {
-      console.log("It didn't work: coordinates ", error.message);
-    })
     .then((coordinates) => {
       return fetchISSFlyOverTimes(coordinates)
-    })
-    .catch((error) => {
-      console.log("It didn't work: Flyover", error.message);
     })
     .then((data) => {
       const { response } = JSON.parse(data);
