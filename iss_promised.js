@@ -21,15 +21,15 @@ const nextISSTimesForMyLocation = function() {
       return fetchCoordsByIP(ip);
     })
     .then((coordinates) => {
-      return fetchISSFlyOverTimes(coordinates)
+      return fetchISSFlyOverTimes(coordinates);
     })
     .then((data) => {
       const { response } = JSON.parse(data);
-      return response; 
+      return response;
     })
     .catch((error) => {
       console.log("It didn't work: ", error.message);
-    })
+    });
 };
 
 module.exports = { nextISSTimesForMyLocation };
