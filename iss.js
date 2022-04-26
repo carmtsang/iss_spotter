@@ -22,7 +22,7 @@ const fetchMyIP = callback => {
 
 // fetching geo coordinates
 const fetchCoordsByIP = (ip, callback) => {
-  request(`https://freegeoip.app/json/${ip}`, (error, response, body) => {
+  request(`https://api.ipbase.com/v2/info?apikey=155e98b0-c385-11ec-8582-1d90b85ec049&ip=${ip}`, (error, response, body) => {
     if (error) {
       callback(error, null);
       return;
